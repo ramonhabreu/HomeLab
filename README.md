@@ -2,23 +2,22 @@
 Overview of my personal HomeLab environment, and the work i've done so far and future plans with it aswell.
 
 ## Project Overview
-Welcome to my homelab repository! This project serves as my personal sandbox for learning systems administration, network engineering, and containerization. I built and maintain this infrastructure to simulate a real-world enterprise environment, focusing on high availability, secure remote access, and automated media management.
+Welcome to my homelab repository! This project serves as my personal sandbox for learning systems administration, network engineering, and containerization. The intended use of this system is to create a home media server, aswell as maintaining a home server with high availability, secure remote access, and automated media management.
 
 ---
 
 ## Architecture & Stack
 
 ### Hardware
-* **Host Machine:** [Mini PC]
-* **CPU:** [e.g., Intel i5-14600k] | **RAM:** [e.g., 32GB DDR4]
-* **Storage:** [512GB NVMe SSD for OS & VMs, 10TB HDD for media]
+* **Host Machine:** Personal M-ATX PC
+* **CPU:** [Intel i5-14600k] | **RAM:** [32GB DDR4]
+* **Storage:** [1TB NVMe SSD for OS & VMs, 24TB HDD for media]
 
 ### Core Technologies
 * **Hypervisor:** Proxmox VE (Virtual Environment)
-* **Containers:** Linux Containers (LXC) & Docker
+* **Containers:** Linux Containers (LXC) Running Debian 13
 * **Remote Access & Networking:** Tailscale (Mesh VPN), Subnet Routing
-* **Media Stack:** Jellyfin, Sonarr, Radarr, Prowlarr, Tdarr
-* **Media Stack 2:** Booklore, Sumiyumi-Server, Shelfmark
+* **Media Stack:** Jellyfin, Sonarr, Radarr, Prowlarr, Tdarr(In-Progress)
 
 ---
 
@@ -39,12 +38,11 @@ Here are the primary services currently running in my lab:
 ### Media & Entertainment
 * **Jellyfin:** Open-source media streaming server.
 * **The "Arr" Stack (Sonarr, Radarr, Prowlarr):** Automated media acquisition and indexer management.
-* **Book Entertainments:** Automated book aquisition and indexer management, also uploads directly to my e-reader whenever I connect to the same network my server is on.
-* *Configuration Note:* All media containers utilize bind mounts to securely access centralized storage located at `/mnt/storage/data` on the host, mapped to `/data` inside the containers.
+* *Configuration Note:* All media containers utilize bind mounts to securely access centralized storage located at `/mnt/storage/` on the host, mapped to `/storage` inside the containers.
 
 ### Infrastructure & Admin (In Progress / Planned)
-* **Dashboard:** [Homarr] for a centralized view of all services.
 * **Ad-Blocking:** [AdGuard Home] for network-wide DNS ad-blocking.
+* **Homarr** In-Progress
 
 ---
 
@@ -61,9 +59,8 @@ Here are the primary services currently running in my lab:
 ---
 
 ## Future Roadmap
+- [ ] Implement Tdarr to optimize my storage on my media server,
 - [ ] Implement automated 3-2-1 backup routines for LXC containers.
-- [X] Set up a local reverse proxy with SSL certificates for secure local HTTPS traffic.
-- [X] Explore hardware passthrough (e.g., GPU passthrough for Jellyfin transcoding).
 
 ---
 *Note: All sensitive data such as public IP addresses, MAC addresses, and API keys have been redacted or omitted for security purposes.*
