@@ -282,24 +282,6 @@ While it is not required for the other applications to function, it makes managi
 
 ---
 
-# Game Server
-
-## Project Zomboid — VM 200
-
-![Project Zomboid Server](screenshots/services/project-zomboid.png)
-
-My Project Zomboid dedicated server runs differently from most of the applications in my homelab.
-
-Instead of using an LXC container, I created a dedicated **Linux virtual machine**.
-
-A VM provides a complete operating system environment and stronger separation from the Proxmox host.
-
-Since game servers can have different dependencies, configuration files, resource requirements, and networking requirements than my normal web applications, I wanted the server to operate independently from the rest of my infrastructure.
-
-This also gives me additional experience administering a traditional Linux server rather than relying entirely on containers.
-
----
-
 # Storage
 
 ![Storage](screenshots/storage/proxmox-storage.png)
